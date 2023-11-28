@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "coplab-kuka-kinematics-homework"
+version = "1.0.0"
+description = "the solution for coppeliasim with forward and inverse kinematics and movements of the robot"
+authors = ["catnull_ros <ros0dev@yandex.ru>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "robot_control" }
+]
+
+[tool.poetry.dependencies]
+python = "3.11.6"
+numpy = "^1.26.2"
+coppeliasim-zmqremoteapi-client = "^2.0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
