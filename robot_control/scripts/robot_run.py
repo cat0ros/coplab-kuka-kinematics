@@ -1,4 +1,5 @@
 from . import sim
+from . import build_circle
 import sys
 
 def connect_coppelia(ip, port):
