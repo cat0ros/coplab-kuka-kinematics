@@ -1,10 +1,18 @@
-from coppeliasim_zmqremoteapi_client import *
+from . import sim
+import sys
 
-client = RemoteAPIClient()
-sim = client.require('sim')
+def connect_coppelia(ip, port):
+    sim.simxFinish(-1)
+    clientId = sim.simxStart(ip, port, True, True, 5000, 5)
+    if clientId != -1:
+        print("Connected to Remote API Server")
+    else:
+        print("Connection failed")
+        sys.exit('Could not reconnect')
 
 def main():
-    sim.getObject('joint_a1')
+    pass
 
-
-main()
+if __name__ == '__main__':
+    connect_coppelia('127.0.0.1', 19990)
+    main()
